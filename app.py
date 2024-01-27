@@ -9,6 +9,8 @@ import time
 from api import Detector
 import datetime
 
+import geocoder
+
 # Set title
 st.title("Webcam Live Feed")
 
@@ -50,10 +52,14 @@ if show_video:
             st.write('Time:', current_time)
             st.write('Count: ', count)
             
+            g = geocoder.ip('me')
+            lat = g.latlng[0]
+            lon = g.latlng[1]
+            
+            st.write("Location: ", lat, lon)
+            
             # display frame
             st.image(frame, channels="BGR")
 else:
     video_display = None
-    
-    
 
