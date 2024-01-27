@@ -50,10 +50,8 @@ if show_video:
             st.write('Time:', current_time)
             st.write('Count: ', count)
             
-            # display image below the video feed
-            new_img = frame
-            st.image(new_img, channels="BGR")
-            
+            # display frame
+            st.image(frame, channels="BGR")
 else:
     video_display = None
     
