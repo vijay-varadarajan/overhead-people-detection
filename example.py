@@ -43,8 +43,9 @@ while True:
     
     if frame_count % 25 == 0:
         frame = Image.fromarray(frame)
-        detections = detector.detect_one(pil_img=frame, input_size=1024, conf_thres=0.2, return_img=True)
+        detections, count = detector.detect_one(pil_img=frame, input_size=1024, conf_thres=0.2, return_img=True)
         print('Time: ', current_time)
+        print('Count: ', count)
         
         frame = cv2.cvtColor(detections, cv2.COLOR_RGB2BGR)
         frame = cv2.resize(frame, (width, height))    

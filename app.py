@@ -12,7 +12,7 @@ import datetime
 import geocoder
 
 # Set title
-st.title("Webcam Live Feed")
+st.title("Drone Live Feed")
 
 detector = Detector(model_name='rapid', weights_path='./weights/pL1_MWHB1024_Mar11_4000.ckpt', use_cuda=False)
 
